@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Project{% endblock %}
+{% block body %}
+<div class="container">
+
+  <div class="btn-toolbar justify-content-between py-4">
+    <h1>Projets</h1>
+    <div>
+      <a class="btn btn-success" href="{{ url_for('project.add') }}">Nouveau projet</a>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Description</th>
+        <th scope="col">Fichier</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>
+          <a class="btn btn-link" href="{{ url_for('project.detail', id='1') }}">Mark</a>
+        </td>
+        <td>Otto</td>
+        <td>
+          <a class="btn btn-link" href="{{ url_for('project.download', id='1') }}">Télécharger</a>
+        </td>
+        <td>
+          <a class="btn btn-link" href="{{ url_for('project.edit', id='1') }}">Modifier</a>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+        <td>
+          <a class="btn btn-link" href="{{ url_for('project.edit', id='1') }}">Modifier</a>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+        <td>
+          <a class="btn btn-link" href="{{ url_for('project.edit', id='1') }}">Modifier</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}
