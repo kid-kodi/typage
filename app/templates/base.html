@@ -36,7 +36,7 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              kone dangui ismael
+              {{current_user.username}}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Profile</a>
@@ -49,6 +49,22 @@
       </div>
     </nav>
     <main>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+            {% block content %}{% endblock %}
+          </div>
+        </div>
+      </div>
       {% block body %}
       {% endblock %}
     </main>
